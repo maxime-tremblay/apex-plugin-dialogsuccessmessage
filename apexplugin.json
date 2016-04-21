@@ -26,7 +26,7 @@
         "internalName" : "CA.MAXIMET.APEXDIALOGSUCCESSMESSAGE",
         "type" : "dynamic action",
         "demo" : "http://max-playground.no-ip.org/ords/f?p=DEMO:1500",
-        "previewImage" : "https://github.com/maxime-tremblay/apex-plugin-dialogsuccessmessage/master/preview.gif"
+        "previewImage" : "https://raw.githubusercontent.com/maxime-tremblay/apex-plugin-dialogsuccessmessage/master/preview.gif"
       }
     }
   }
