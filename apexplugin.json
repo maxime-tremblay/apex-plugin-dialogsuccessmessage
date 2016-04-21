@@ -1,0 +1,33 @@
+{
+  "name" : "Show Close Dialog Success Message",
+  "version" : "1.0",
+  "description" : "This dynamic action plugin is used to display the Success Message from the corresponding Dialog Close process.",
+  "keywords" : ["dialog", "close", "success", "message"],
+  "homepage" : "https://github.com/maxime-tremblay/apex-plugin-dialogsuccessmessage",
+  "bugs" : {
+    "url" : "https://github.com/maxime-tremblay/apex-plugin-dialogsuccessmessage/issues",
+    "email" : "maxime.tremblay.consultant@gmail.com"
+  },
+  "license" : "MIT",
+  "author" : {
+    "name" : "Maxime Tremblay",
+    "email" : "maxime.tremblay.consultant@gmail.com",
+    "url" : "http://max-tremblay.blogspot.ca/"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/maxime-tremblay/apex-plugin-dialogsuccessmessage.git"
+  },
+  "oracle" : {
+    "versions" : ["11.2.0.1", "12.1.0.1"],
+    "apex" : {
+      "versions" : ["5.0.0"],
+      "plugin" : {
+        "internalName" : "CA.MAXIMET.APEXDIALOGSUCCESSMESSAGE",
+        "type" : "dynamic action",
+        "demo" : "http://max-playground.no-ip.org/ords/f?p=DEMO:1500",
+        "previewImage" : "https://github.com/maxime-tremblay/apex-plugin-dialogsuccessmessage/master/preview.gif"
+      }
+    }
+  }
+}
