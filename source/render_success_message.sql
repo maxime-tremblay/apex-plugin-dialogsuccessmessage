@@ -1,3 +1,9 @@
+/*-------------------------------------
+ * APEX Dialog Success Message functions
+ * Version: 1.0 (2016-04-21)
+ * Author:  Maxime Tremblay
+ *-------------------------------------
+*/
 function render_success_message(p_dynamic_action in apex_plugin.t_dynamic_action,
                                 p_plugin         in apex_plugin.t_plugin )
 return apex_plugin.t_dynamic_action_render_result is
@@ -6,10 +12,11 @@ return apex_plugin.t_dynamic_action_render_result is
     l_result                   apex_plugin.t_dynamic_action_render_result;
     l_page_template            apex_application_pages.page_template%type;
     l_success_message_template apex_application_temp_page.success_message%type;
-    l_logging                  varchar2(50)  := p_plugin.attribute_01;
-    l_wrap_class               varchar2(100) := p_plugin.attribute_02;
-    l_close_trigger            varchar2(100) := p_plugin.attribute_03;
-    l_close_notification_text  varchar2(500) := p_dynamic_action.attribute_01;
+    l_logging                  p_plugin.attribute_01%type := p_plugin.attribute_01;
+    l_wrap_class               p_plugin.attribute_02%type := p_plugin.attribute_02;
+    l_close_trigger            p_plugin.attribute_03%type := p_plugin.attribute_03;
+    
+    l_close_notification_text  p_dynamic_action.attribute_01%type := p_dynamic_action.attribute_01;
 begin
     -- Debug
     if apex_application.g_debug then
@@ -18,7 +25,7 @@ begin
     end if;
     
     --
-    -- add tooltipster and apextooltip js files
+    -- add apexDialogSuccessMessage js files
     apex_javascript.add_library(p_name                  => 'apexDialogSuccessMessage',
                                 p_directory             => p_plugin.file_prefix || 'js/',
                                 p_check_to_add_minified => true);

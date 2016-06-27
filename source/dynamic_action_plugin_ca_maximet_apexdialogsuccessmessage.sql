@@ -16,7 +16,7 @@ wwv_flow_api.import_begin (
 ,p_release=>'5.0.2.00.07'
 ,p_default_workspace_id=>1691260780111927
 ,p_default_application_id=>200
-,p_default_owner=>'MAX_PLAYGROUND'
+,p_default_owner=>'DEMO_APP'
 );
 end;
 /
@@ -35,6 +35,12 @@ wwv_flow_api.create_plugin(
 ,p_category=>'MISC'
 ,p_supported_ui_types=>'DESKTOP'
 ,p_plsql_code=>wwv_flow_utilities.join(wwv_flow_t_varchar2(
+'/*-------------------------------------',
+' * APEX Dialog Success Message functions',
+' * Version: 1.0 (2016-04-21)',
+' * Author:  Maxime Tremblay',
+' *-------------------------------------',
+'*/',
 'function render_success_message(p_dynamic_action in apex_plugin.t_dynamic_action,',
 '                                p_plugin         in apex_plugin.t_plugin )',
 'return apex_plugin.t_dynamic_action_render_result is',
@@ -55,7 +61,7 @@ wwv_flow_api.create_plugin(
 '    end if;',
 '    ',
 '    --',
-'    -- add tooltipster and apextooltip js files',
+'    -- add apexDialogSuccessMessage js files',
 '    apex_javascript.add_library(p_name                  => ''apexDialogSuccessMessage'',',
 '                                p_directory             => p_plugin.file_prefix || ''js/'',',
 '                                p_check_to_add_minified => true);',
