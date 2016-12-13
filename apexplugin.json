@@ -12,6 +12,8 @@
   "author" : {
     "name" : "Maxime Tremblay",
     "email" : "maxime.tremblay.consultant@gmail.com",
+    "twitter" : "mtremblaydev",
+    "donationUrl" : "https://paypal.me/mtremblaydev/3",
     "url" : "http://max-tremblay.blogspot.ca/"
   },
   "repository" : {
