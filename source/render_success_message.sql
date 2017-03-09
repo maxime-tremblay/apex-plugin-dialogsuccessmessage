@@ -1,6 +1,6 @@
 /*-------------------------------------
  * APEX Dialog Success Message functions
- * Version: 1.1 (2016-08-29)
+ * Version: 1.2 (2017-03-08)
  * Author:  Maxime Tremblay
  *-------------------------------------
 */

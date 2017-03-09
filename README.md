@@ -2,6 +2,10 @@
 This dynamic action plugin is used to display the Success Message from the corresponding Dialog Close process.
 
 ## Changelog
+### 1.2
+  - Bug fix 
+    - Messages were not displayed on some page template
+
 ### 1.1
   - New attribute
     - Message Override: Can be used to override the dialog close message or only to show a success message on the page.

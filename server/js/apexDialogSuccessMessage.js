@@ -1,6 +1,6 @@
 // APEX Dialog Success Message functions
 // Author: Maxime Tremblay
-// Version: 1.1
+// Version: 1.2
 
 // global namespace
 var apexDialogSuccessMessage = {
@@ -31,8 +31,11 @@ var apexDialogSuccessMessage = {
         var lWrapClass = daThis.action.attribute03;
         var lCloseMessageTrigger = daThis.action.attribute04;
         var lLogging = apexDialogSuccessMessage.parseBoolean(daThis.action.attribute05);
-        var lHtml = lTemplate.replace('#SUCCESS_MESSAGE#', lMessage)
-                             .replace('#CLOSE_NOTIFICATION#', lCloseNotificationText);
+        var lHtml = '<div class="' + lWrapClass + '">'
+                    + lTemplate.replace('#SUCCESS_MESSAGE#', lMessage)
+                               .replace('#CLOSE_NOTIFICATION#', lCloseNotificationText)
+                    + '</div>';
+        var lContainer;
 
         // Logging
         if (lLogging) {
@@ -45,8 +48,23 @@ var apexDialogSuccessMessage = {
         //remove previous message
         apex.jQuery('.' + lWrapClass).remove();
 
+        //find the standard container for the message
+        if ($('#t_Body_content').length > 0){
+            lContainer = $('#t_Body_content');
+        }
+        else if ($('.t-Body').length > 0){
+            lContainer = $('.t-Body');
+        }
+        else if ($('.t-Dialog-Body').length > 0){
+            lContainer = $('.t-Dialog-Body');
+        }
+        else {
+            lContainer = $(body);
+        }
+
         //add new message
-        apex.jQuery(lHtml).prependTo('#t_Body_content').wrap('<div class="' + lWrapClass + '"></div>');
+        //apex.jQuery(lHtml).prependTo('#t_Body_content').wrap('<div class="' + lWrapClass + '"></div>');
+        apex.jQuery(lHtml).prependTo(lContainer);
 
         //Set visible for default UT success message template
         apex.jQuery('.t-Body-alert .t-Alert').addClass('is-visible');
