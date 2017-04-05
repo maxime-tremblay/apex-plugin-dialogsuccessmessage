@@ -3,7 +3,7 @@ This dynamic action plugin is used to display the Success Message from the corre
 
 ## Changelog
 ### 1.2
-  - Bug fix 
+  - Bug fix
     - Messages were not displayed on some page template
 
 ### 1.1
@@ -25,6 +25,10 @@ This dynamic action plugin is used to display the Success Message from the corre
 
 ### Component Attribute
 - **Close Notification Text** - Close Notification Text (Default: Close Notification)
+- **Override Message** - Used to override the close dialog message (can also be used to show a custom message not triggerred by a dialog closed)
+  - Yes
+  - No
+- **Notification Message** - Message to display (Only available when `Override Message = Yes`)
 
 ## How to use
 Taking for granted that you have a page calling a modal page and that it's closing using a Close Dialog Process with a Success Message.
