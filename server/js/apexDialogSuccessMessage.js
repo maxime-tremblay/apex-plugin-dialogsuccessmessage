@@ -1,76 +1,40 @@
 // APEX Dialog Success Message functions
 // Author: Maxime Tremblay
-// Version: 1.2
+// Version: 2.0
 
-// global namespace
-var apexDialogSuccessMessage = {
-    // parse string to boolean
-    parseBoolean: function(pString) {
-        var lBoolean;
+/**
+ * @namespace
+ **/
+var apexDialogSuccessMessage = {};
 
-        switch(pString.toLowerCase()) {
-            case 'true':
-                lBoolean = true;
-                break;
-            case 'false':
-                lBoolean = false;
-                break;
-            default:
-                lBoolean = undefined;
-        }
+( function( plugin, message, debug, $, undefined ) {
+    "use strict";
 
-        return lBoolean;
-    },
-    // function that gets called from plugin
-    showMessage: function() {
-        // plugin attributes
+    /**
+     * Add messages for use by getMessage and the format functions. Can be called multiple times. Additional
+     * messages are merged.
+     *
+     * @param  {Object} pMessages   An object whose properties are message keys and the values are localized message text.
+     *
+     * @function showMessage
+     * @memberOf apexDialogSuccessMessage
+     **/
+    plugin.showMessage = function( ) {
+        /*
+         * Plugin Attributes
+         */
         var daThis = this;
-        var lTemplate = daThis.action.attribute01;
-        var lMessage = daThis.action.attribute06 || daThis.data.successMessage.text || '';
-        var lCloseNotificationText = daThis.action.attribute02;
-        var lWrapClass = daThis.action.attribute03;
-        var lCloseMessageTrigger = daThis.action.attribute04;
-        var lLogging = apexDialogSuccessMessage.parseBoolean(daThis.action.attribute05);
-        var lHtml = '<div class="' + lWrapClass + '">'
-                    + lTemplate.replace('#SUCCESS_MESSAGE#', lMessage)
-                               .replace('#CLOSE_NOTIFICATION#', lCloseNotificationText)
-                    + '</div>';
-        var lContainer;
+        var lMessage = daThis.action.attribute01 || daThis.data.successMessage.text || '';
+            
+        /*
+         * Logging
+         */ 
+        debug.info('showMessage: Attribute Success Message:', lMessage);
+        
+        /*
+         * Show message
+         */
+        message.showPageSuccess( lMessage );
+    };
 
-        // Logging
-        if (lLogging) {
-            apex.debug.trace('showMessage: Attribute Success Message Template:', lTemplate);
-            apex.debug.trace('showMessage: Attribute Success Message:', lMessage);
-            apex.debug.trace('showMessage: Attribute Wrapping Class:', lWrapClass);
-            apex.debug.trace('showMessage: Attribute Close Message Trigger:', lCloseMessageTrigger);
-            apex.debug.trace('showMessage: Attribute Logging:', lLogging);
-        }
-        //remove previous message
-        apex.jQuery('.' + lWrapClass).remove();
-
-        //find the standard container for the message
-        if ($('#t_Body_content').length > 0){
-            lContainer = $('#t_Body_content');
-        }
-        else if ($('.t-Body').length > 0){
-            lContainer = $('.t-Body');
-        }
-        else if ($('.t-Dialog-Body').length > 0){
-            lContainer = $('.t-Dialog-Body');
-        }
-        else {
-            lContainer = $(body);
-        }
-
-        //add new message
-        //apex.jQuery(lHtml).prependTo('#t_Body_content').wrap('<div class="' + lWrapClass + '"></div>');
-        apex.jQuery(lHtml).prependTo(lContainer);
-
-        //Set visible for default UT success message template
-        apex.jQuery('.t-Body-alert .t-Alert').addClass('is-visible');
-
-        apex.jQuery(lCloseMessageTrigger).click(function(){
-            apex.jQuery('.' + lWrapClass).remove();
-        });
-    }
-};
+})( apexDialogSuccessMessage, apex.message, apex.debug, apex.jQuery );
