@@ -1,7 +1,7 @@
 # Oracle APEX Dynamic Action Plugin - Show Close Dialog Success Message
 This dynamic action plugin is used to display the Success Message from the corresponding Dialog Close process.
 
-> If you are using APEX 5.0 or not using the universal theme, use [release 1.2](./releases/tag/v1.2). Otherwise, use the [lastest release](./releases/latest).
+> If you are using APEX 5.0 or not using the universal theme, use [release 1.2](../../releases/tag/v1.2). Otherwise, use the [lastest release](../../releases/latest).
 
 ## Changelog
 ### 2.0
