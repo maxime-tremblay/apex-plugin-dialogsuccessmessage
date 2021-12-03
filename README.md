@@ -43,7 +43,7 @@ On the parent page:
 - As action choose "Show Close Dialog Success Message"
 
 ## Demo Application
-[http://max-playground.no-ip.org/ords/f?p=DEMO:1500](http://max-playground.no-ip.org/ords/f?p=DEMO:1500)
+[https://askmax.solutions/ords/f?p=DEMO:1500](https://askmax.solutions/ords/f?p=DEMO:1500)
 
 ## Preview
 ## ![](https://github.com/maxime-tremblay/apex-plugin-dialogsuccessmessage/blob/master/preview.gif)
