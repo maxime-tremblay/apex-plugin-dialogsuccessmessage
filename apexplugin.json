@@ -6,15 +6,15 @@
   "homepage" : "https://github.com/maxime-tremblay/apex-plugin-dialogsuccessmessage",
   "bugs" : {
     "url" : "https://github.com/maxime-tremblay/apex-plugin-dialogsuccessmessage/issues",
-    "email" : "maxime.tremblay.consultant@gmail.com"
+    "email" : "askmax@askmax.solutions"
   },
   "license" : "MIT",
   "author" : {
     "name" : "Maxime Tremblay",
-    "email" : "maxime.tremblay.consultant@gmail.com",
-    "twitter" : "mtremblaydev",
+    "email" : "askmax@askmax.solutions",
+    "twitter" : "askmaxsolutions",
     "donationUrl" : "https://paypal.me/mtremblaydev/3",
-    "url" : "http://max-tremblay.blogspot.ca/"
+    "url" : "https://askmax.blog/"
   },
   "repository" : {
     "type" : "git",
@@ -27,7 +27,7 @@
       "plugin" : {
         "internalName" : "CA.MAXIMET.APEXDIALOGSUCCESSMESSAGE",
         "type" : "dynamic action",
-        "demo" : "http://max-playground.no-ip.org/ords/f?p=DEMO:1500",
+        "demo" : "https://askmax.solutions/ords/f?p=DEMO:1500",
         "previewImage" : "https://raw.githubusercontent.com/maxime-tremblay/apex-plugin-dialogsuccessmessage/master/preview.gif"
       }
     }
